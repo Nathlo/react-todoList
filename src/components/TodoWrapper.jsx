@@ -25,6 +25,11 @@ const TodoWrapper = () => {
       todo, completed: !todo.completed} : todo ) )
   }
 
+  const deleteTodo = id => {
+    // returning the ID's value when the ID is different from the ID passed in
+    setTodos(todos.filter(todo => todo.id !== id) )
+  }
+
   return (
     <div className='TodoWrapper'>
       <h1>Tâches Faites !</h1>
@@ -33,7 +38,8 @@ const TodoWrapper = () => {
 
         {todos.map( (todo, index)  => (
             <Todo task={todo} key={index} 
-              toggleComplete={toggleComplete}/>
+              toggleComplete={toggleComplete} 
+              deleteTodo={deleteTodo}  />
         ))}
      
     </div>
