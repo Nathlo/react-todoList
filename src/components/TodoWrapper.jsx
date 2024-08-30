@@ -33,7 +33,7 @@ uuidv4();
 
   const editTodo = id => {
     setTodos( todos.map(todo => todo.id === id ? {
-      ...todo, isEditing: !isEditing} : todo ))
+      ...todo, isEditing: !todo.isEditing} : todo ))
     }
 
   const editTask = (task, id) => {
